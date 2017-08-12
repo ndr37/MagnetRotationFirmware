@@ -31,7 +31,7 @@ bool in_motion = false;
  #define MODE0 A3
  #define MODE1 A2
  #define MODE2 A1
-  DRV8825 stepper(MOTOR_STEPS, DIR, STEP, ENBL, MODE0, MODE1, MODE2);
+ DRV8825 stepper(MOTOR_STEPS, DIR, STEP, ENBL, MODE0, MODE1, MODE2);
 
 
  //setup conversion factors
@@ -51,15 +51,15 @@ bool in_motion = false;
  bool opto2_state;
 
 void setup() {
-    stepper.setRPM(15);
-    stepper.setMicrostep(8);
-    stepper.enable();
+  stepper.setRPM(15);
+  stepper.setMicrostep(8);
+  stepper.enable();
 
-     Serial.begin(9600);
-     Serial.println(gear_ratio);
-     Serial.println(degrees_per_pulse);
+  Serial.begin(9600);
+  Serial.println(gear_ratio);
+  Serial.println(degrees_per_pulse);
      
-    homed=false;
+  homed=false;
  
   // Quadrature encoder
   pinMode(c_EncoderInterruptApin, INPUT);      // sets pin A as input
